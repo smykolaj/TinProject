@@ -1,0 +1,16 @@
+﻿version: '3.8'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: GameStoreApi/Dockerfile
+    ports:
+      - "5001:80"
+    depends_on:
+      - db
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    ports:
+      - "3307:3306"

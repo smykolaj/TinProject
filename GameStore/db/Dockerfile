@@ -1,0 +1,10 @@
+FROM mysql:8.0
+
+ENV MYSQL_ROOT_PASSWORD=mykolkasuper
+ENV MYSQL_DATABASE=GameStore
+ENV MYSQL_USER=mykola
+ENV MYSQL_PASSWORD=mykola
+
+
+# Expose MySQL default port
+EXPOSE 3306
