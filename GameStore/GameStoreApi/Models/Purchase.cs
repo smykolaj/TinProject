@@ -1,8 +1,10 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace GameStore.Models;
 
 public class Purchase
 {
-    public int Id { get; set; }
+    [Key] public int Id { get; set; }
     public int UserId { get; set; }
     public int GameId { get; set; }
     public DateTime PurchaseDate { get; set; }
