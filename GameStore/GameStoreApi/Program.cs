@@ -1,5 +1,7 @@
 using System.Text;
 using GameStore;
+using GameStore.Repositories;
+using GameStore.Repositories.Interfaces;
 using GameStore.Services;
 using GameStore.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -15,6 +17,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddScoped<ILoginService, LoginService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
+
+
 builder.Services.AddScoped<Validator>();
 builder.Services.AddSwaggerGen(c =>
 {
